@@ -17,7 +17,8 @@
     </style>
 </head>
 <body>
-    <div id="app">
+    <h1 align="center">@Vue Component - vc-tabs</h1>
+    <div id="app" class="container">
         <vc-tabset 
             v-ref:tabs
             :active="active"
@@ -26,17 +27,17 @@
             <vc-tab
                 :header="header0"
             >
-                <span>sdfsfd</span>
+                <div>content0</div>
             </vc-tab>
             <vc-tab
                 :header="header1"
             >
-                <span>sdfsfd</span>
+                <div>content1</div>
             </vc-tab>
             <vc-tab
                 :header="header2"
             >
-                <span>sdfsfd</span>
+                <div>content2</div>
             </vc-tab>
         </vc-tabset>
 

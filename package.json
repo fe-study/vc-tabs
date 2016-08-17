@@ -1,13 +1,15 @@
 {
   "author": "indexxuan@gmail.com",
   "name": "vc-tabs",
-  "version": "0.3.1",
-  "description": "a tabs with bootstrap & vue.js",
+  "version": "0.8.1",
+  "description": "a select component based on vue.js & bootstrap",
   "scripts": {
     "start": "webpack-dev-server --inline --hot --quiet",
+    "build:dev": " webpack --progress --hide-modules --config webpack.config.js",
+    "build:prod": "webpack --progress --hide-modules --config webpack.production.js",
+    "build": "npm run build:dev && npm run build:prod",
     "example": " webpack -w --progress --hide-modules --config webpack.example.js",
-    "build": " webpack -w --progress --hide-modules ",
-    "publish": "webpack --progress --hide-modules --config webpack.production.js"
+    "publish": "npm build && npm publish"
   },
   "main": "dist/build.js",
   "repository": {
@@ -21,7 +23,7 @@
   "dependencies": {
     "vue": "^1.0.24"
   },
-  "keywords": ["input", "tab", "tabs", "component", "vue", "bootstrap"],
+  "keywords": ["tab", "tabset", "tabs", "component", "vue", "bootstrap"],
   "devDependencies": {
     "babel-core": "^6.1.21",
     "babel-loader": "^6.1.0",
