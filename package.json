@@ -1,13 +1,13 @@
 {
   "author": "indexxuan@gmail.com",
   "name": "vc-tabs",
-  "version": "0.8.1",
-  "description": "a select component based on vue.js & bootstrap",
+  "version": "0.3.2",
+  "description": "a bootstrap tab component based on vue.js",
   "scripts": {
     "start": "webpack-dev-server --inline --hot --quiet",
     "build:dev": " webpack --progress --hide-modules --config webpack.config.js",
     "build:prod": "webpack --progress --hide-modules --config webpack.production.js",
-    "build": "npm run build:dev && npm run build:prod",
+    "build": "npm run build:dev && npm run build:prod && npm run example",
     "example": " webpack -w --progress --hide-modules --config webpack.example.js",
     "publish": "npm build && npm publish"
   },
