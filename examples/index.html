@@ -18,11 +18,15 @@
 </head>
 <body>
     <h1 align="center">@Vue Component - vc-tabs</h1>
+    <hr>
 
     <div id="app" class="container">
+
         <vc-tabset 
             v-ref:tabs
+            :trigger="trigger"
             :active="active"
+            :removeable="true"
             :auto-index="autoIndex"
         >
             <vc-tab
@@ -40,10 +44,20 @@
             >
                 <div>content2</div>
             </vc-tab>
+            <vc-tab
+                :header="header0"
+            >
+                <div>content0</div>
+            </vc-tab>
         </vc-tabset>
 
         <pre>{{ renderData | json 4 }}</pre>
         <span @click="deleteTheTab">点我删除一个tab</span>
+
+        <div class="form-group">
+            <label>触发模式trigger(默认: click,可选为hover)</label>
+            <input type="text" class="form-control" placeholder="trigger" v-model="trigger">
+        </div>
 
     </div>
     <script src='../dist/example.js'></script>

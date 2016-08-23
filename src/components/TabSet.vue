@@ -1,7 +1,7 @@
 <template>
     <div :data-name="name">
         <!-- Nav tabs -->
-        <ul class="nav nav-tabs" role="tablist">
+        <ul v-el:header class="nav nav-tabs" role="tablist">
             <li
                 v-for="r in renderData"
                 :class="{
@@ -9,6 +9,7 @@
                     'disabled': r.disabled
                 }"
                 @click.prevent="handleTabListClick(r.index, r)"
+                @mouseover.prevent="handleTabListMouseover(r.index, r)"
                 :disabled="r.disabled"
             >
                 <a href="#">  
@@ -16,9 +17,9 @@
                         {{{ r.header }}}
                     </slot> 
                 </a>
+                <span v-if="r.index == active && removeable" @click="remove(r)" class="remove-tab">&times;</span>
             </li>
         </ul>
-
         <!-- Tab panes -->
         <div class="tab-content" v-el:tab-content>
             <slot></slot>
@@ -28,7 +29,15 @@
 
 <style>
 .nav-tabs {
-    margin-bottom: 15px
+    margin-bottom: 15px;
+}
+.nav-tabs .remove-tab {
+    position: absolute;
+    top: -3px;
+    right: 5px;
+    font-size: 16px;
+    opacity: .5;
+    cursor: pointer;
 }
 </style>
 
@@ -36,6 +45,18 @@
 export default {
     props: {
         name: String,
+        removeable: {
+            type: Boolean,
+            default: false
+        },
+        trigger: {
+            type: String,
+            default: 'click'
+        },
+        delay: {
+            type: [Number, String],
+            default: 120 
+        },
         effect: {
             type: String,
             default: 'fadein'
@@ -56,8 +77,22 @@ export default {
         }
     },
     methods: {
+        remove (tabItem) {
+            this.renderData.$remove(tabItem)
+        },
         handleTabListClick: function (index, el) {
-            if (!el.disabled) this.active = index
+            if (this.trigger === 'click') {
+                if (!el.disabled) this.active = index
+            }
+        },
+        handleTabListMouseover: function (index, el) {
+            if (this.trigger === 'hover') {
+                var oldTriggerId = this.triggerId
+                clearTimeout(oldTriggerId)
+                this.triggerId = setTimeout(() => {
+                    if (!el.disabled) this.active = index
+                }, this.delay)
+            }
         }
     }
 }

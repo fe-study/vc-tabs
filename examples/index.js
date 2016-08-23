@@ -6,6 +6,7 @@ new Vue({
 	data () {
 		return {
             active: 0,
+            trigger: 'hover',
             autoIndex: true,
             renderData: null,
             header0: 'header0',

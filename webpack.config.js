@@ -41,7 +41,6 @@ module.exports = {
   devtool: 'source-map'
 };
 
-
 if (process.env.NODE_ENV === 'production') {
   delete module.exports.devtool;
   module.exports.plugins = [

@@ -509,7 +509,7 @@ exports = module.exports = __webpack_require__(3)();
 
 
 // module
-exports.push([module.i, ".nav-tabs {\n  margin-bottom: 15px;\n}\n", ""]);
+exports.push([module.i, ".nav-tabs {\n  margin-bottom: 15px;\n}\n.nav-tabs .remove-tab {\n  position: absolute;\n  top: -3px;\n  right: 5px;\n  font-size: 16px;\n  opacity: .5;\n  cursor: pointer;\n}\n", ""]);
 
 // exports
 
@@ -524,7 +524,7 @@ module.exports = "<div role=\"tabpanel\" class=\"tab-pane\"\n        :class=\"{h
 /* 11 */
 /***/ function(module, exports) {
 
-module.exports = "<div :data-name=\"name\">\n        <!-- Nav tabs -->\n        <ul class=\"nav nav-tabs\" role=\"tablist\">\n            <li\n                v-for=\"r in renderData\"\n                :class=\"{\n                    'active': (r.index == active),\n                    'disabled': r.disabled\n                }\"\n                @click.prevent=\"handleTabListClick(r.index, r)\"\n                :disabled=\"r.disabled\"\n            >\n                <a href=\"#\">  \n                    <slot name=\"header\"> \n                        {{{ r.header }}}\n                    </slot> \n                </a>\n            </li>\n        </ul>\n\n        <!-- Tab panes -->\n        <div class=\"tab-content\" v-el:tab-content>\n            <slot></slot>\n        </div>\n    </div>";
+module.exports = "<div :data-name=\"name\">\n        <!-- Nav tabs -->\n        <ul v-el:header class=\"nav nav-tabs\" role=\"tablist\">\n            <li\n                v-for=\"r in renderData\"\n                :class=\"{\n                    'active': (r.index == active),\n                    'disabled': r.disabled\n                }\"\n                @click.prevent=\"handleTabListClick(r.index, r)\"\n                @mouseover.prevent=\"handleTabListMouseover(r.index, r)\"\n                :disabled=\"r.disabled\"\n            >\n                <a href=\"#\">  \n                    <slot name=\"header\"> \n                        {{{ r.header }}}\n                    </slot> \n                </a>\n                <span v-if=\"r.index == active && removeable\" @click=\"remove(r)\" class=\"remove-tab\">&times;</span>\n            </li>\n        </ul>\n        <!-- Tab panes -->\n        <div class=\"tab-content\" v-el:tab-content>\n            <slot></slot>\n        </div>\n    </div>";
 
 /***/ },
 /* 12 */
@@ -659,7 +659,7 @@ Object.defineProperty(exports, "__esModule", {
 // <template>
 //     <div :data-name="name">
 //         <!-- Nav tabs -->
-//         <ul class="nav nav-tabs" role="tablist">
+//         <ul v-el:header class="nav nav-tabs" role="tablist">
 //             <li
 //                 v-for="r in renderData"
 //                 :class="{
@@ -667,6 +667,7 @@ Object.defineProperty(exports, "__esModule", {
 //                     'disabled': r.disabled
 //                 }"
 //                 @click.prevent="handleTabListClick(r.index, r)"
+//                 @mouseover.prevent="handleTabListMouseover(r.index, r)"
 //                 :disabled="r.disabled"
 //             >
 //                 <a href="#">  
@@ -674,9 +675,9 @@ Object.defineProperty(exports, "__esModule", {
 //                         {{{ r.header }}}
 //                     </slot> 
 //                 </a>
+//                 <span v-if="r.index == active && removeable" @click="remove(r)" class="remove-tab">&times;</span>
 //             </li>
 //         </ul>
-
 //         <!-- Tab panes -->
 //         <div class="tab-content" v-el:tab-content>
 //             <slot></slot>
@@ -686,7 +687,15 @@ Object.defineProperty(exports, "__esModule", {
 
 // <style>
 // .nav-tabs {
-//     margin-bottom: 15px
+//     margin-bottom: 15px;
+// }
+// .nav-tabs .remove-tab {
+//     position: absolute;
+//     top: -3px;
+//     right: 5px;
+//     font-size: 16px;
+//     opacity: .5;
+//     cursor: pointer;
 // }
 // </style>
 
@@ -694,6 +703,18 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
     props: {
         name: String,
+        removeable: {
+            type: Boolean,
+            default: false
+        },
+        trigger: {
+            type: String,
+            default: 'click'
+        },
+        delay: {
+            type: [Number, String],
+            default: 120
+        },
         effect: {
             type: String,
             default: 'fadein'
@@ -714,8 +735,25 @@ exports.default = {
         };
     },
     methods: {
+        remove: function remove(tabItem) {
+            this.renderData.$remove(tabItem);
+        },
+
         handleTabListClick: function handleTabListClick(index, el) {
-            if (!el.disabled) this.active = index;
+            if (this.trigger === 'click') {
+                if (!el.disabled) this.active = index;
+            }
+        },
+        handleTabListMouseover: function handleTabListMouseover(index, el) {
+            var _this = this;
+
+            if (this.trigger === 'hover') {
+                var oldTriggerId = this.triggerId;
+                clearTimeout(oldTriggerId);
+                this.triggerId = setTimeout(function () {
+                    if (!el.disabled) _this.active = index;
+                }, this.delay);
+            }
         }
     }
 };
