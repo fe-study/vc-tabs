@@ -2,7 +2,7 @@
   "author": "indexxuan@gmail.com",
   "name": "vc-tabs",
   "version": "0.4.0",
-  "description": "a bootstrap tab component based on vue.js",
+  "description": "bootstrap tab component based on vue.js",
   "scripts": {
     "start": "webpack-dev-server --inline --hot --quiet",
     "dev": " webpack -w --progress --hide-modules --config webpack.config.js",
@@ -23,10 +23,11 @@
   "bugs": {
       "url": "https://github.com/iwaimai-bi-fe/vc-tabs/issues"
   },
+  "keywords": ["tab", "tabset", "tabs", "component", "vue", "bootstrap"],
   "dependencies": {
+    "bootstrap": "^3.3.5",
     "vue": "^1.0.24"
   },
-  "keywords": ["tab", "tabset", "tabs", "component", "vue", "bootstrap"],
   "devDependencies": {
     "babel-core": "^6.1.21",
     "babel-loader": "^6.1.0",
@@ -45,9 +46,10 @@
     "webpack-dev-server": "^1.12.0"
   },
   "files": [
-      "dist/build.js",
-      "dist/build.js.map",
-      "dist/build.min.js"
+    "src",
+    "dist/build.js",
+    "dist/build.js.map",
+    "dist/build.min.js"
   ],
   "license": "MIT"
 }

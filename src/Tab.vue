@@ -1,6 +1,6 @@
 <template>
     <div role="tabpanel" class="tab-pane"
-        :class="{hide: !show}"
+        :class="{ 'hide': !show }"
         v-show="show"
         :transition="transition"
     >
@@ -15,9 +15,12 @@
 </style>
 
 <script>
+import vcTabset from './TabSet.vue'
+
 const COMPONENT_NS = 'TAB'
 
-export default {
+const vcTab = {
+    name: 'vc-tab',
     props: {
         header: { // tab标题
             type: String
@@ -105,4 +108,8 @@ export default {
         }
     }
 }
+
+vcTab.vcTabset = vcTabset
+
+export default vcTab
 </script>

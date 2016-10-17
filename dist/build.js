@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["VueComponentsName"] = factory();
+		exports["vcTabs"] = factory();
 	else
-		root["VueComponentsName"] = factory();
+		root["vcTabs"] = factory();
 })(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -78,6 +78,31 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 0 */,
 /* 1 */,
 /* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+__webpack_require__(7)
+module.exports = __webpack_require__(13)
+
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(11)
+if (false) {
+(function () {
+var hotAPI = require("vue-hot-reload-api")
+hotAPI.install(require("vue"))
+if (!hotAPI.compatible) return
+var id = "-!babel!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=script&index=0!./TabSet.vue"
+hotAPI.createRecord(id, module.exports)
+module.hot.accept(["-!babel!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=script&index=0!./TabSet.vue","-!vue-html-loader!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=template&index=0!./TabSet.vue"], function () {
+var newOptions = require("-!babel!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=script&index=0!./TabSet.vue")
+if (newOptions && newOptions.__esModule) newOptions = newOptions.default
+var newTemplate = require("-!vue-html-loader!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=template&index=0!./TabSet.vue")
+hotAPI.update(id, newOptions, newTemplate)
+})
+})()
+}
+
+/***/ },
+/* 3 */
 /***/ function(module, exports) {
 
 /*
@@ -329,7 +354,7 @@ function updateLink(linkElement, obj) {
 
 
 /***/ },
-/* 3 */
+/* 4 */
 /***/ function(module, exports) {
 
 /*
@@ -385,7 +410,7 @@ module.exports = function() {
 
 
 /***/ },
-/* 4 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 __webpack_require__(6)
@@ -398,37 +423,12 @@ if (false) {
 var hotAPI = require("vue-hot-reload-api")
 hotAPI.install(require("vue"))
 if (!hotAPI.compatible) return
-var id = "-!babel!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=script&index=0!./Tab.vue"
+var id = "-!babel!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=script&index=0!./Tab.vue"
 hotAPI.createRecord(id, module.exports)
-module.hot.accept(["-!babel!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=script&index=0!./Tab.vue","-!vue-html-loader!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=template&index=0!./Tab.vue"], function () {
-var newOptions = require("-!babel!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=script&index=0!./Tab.vue")
+module.hot.accept(["-!babel!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=script&index=0!./Tab.vue","-!vue-html-loader!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=template&index=0!./Tab.vue"], function () {
+var newOptions = require("-!babel!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=script&index=0!./Tab.vue")
 if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-var newTemplate = require("-!vue-html-loader!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=template&index=0!./Tab.vue")
-hotAPI.update(id, newOptions, newTemplate)
-})
-})()
-}
-
-/***/ },
-/* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
-__webpack_require__(7)
-module.exports = __webpack_require__(13)
-
-if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(11)
-if (false) {
-(function () {
-var hotAPI = require("vue-hot-reload-api")
-hotAPI.install(require("vue"))
-if (!hotAPI.compatible) return
-var id = "-!babel!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=script&index=0!./TabSet.vue"
-hotAPI.createRecord(id, module.exports)
-module.hot.accept(["-!babel!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=script&index=0!./TabSet.vue","-!vue-html-loader!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=template&index=0!./TabSet.vue"], function () {
-var newOptions = require("-!babel!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=script&index=0!./TabSet.vue")
-if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-var newTemplate = require("-!vue-html-loader!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=template&index=0!./TabSet.vue")
+var newTemplate = require("-!vue-html-loader!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=template&index=0!./Tab.vue")
 hotAPI.update(id, newOptions, newTemplate)
 })
 })()
@@ -444,14 +444,14 @@ hotAPI.update(id, newOptions, newTemplate)
 var content = __webpack_require__(8);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(2)(content, {});
+var update = __webpack_require__(3)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!./../../../node_modules/.0.21.0@css-loader/index.js!./../../../node_modules/.7.1.7@vue-loader/lib/style-rewriter.js?id=_v-77ef9da0&file=Tab.vue!./../../../node_modules/.2.2.3@less-loader/index.js!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=style&index=0!./Tab.vue", function() {
-			var newContent = require("!!./../../../node_modules/.0.21.0@css-loader/index.js!./../../../node_modules/.7.1.7@vue-loader/lib/style-rewriter.js?id=_v-77ef9da0&file=Tab.vue!./../../../node_modules/.2.2.3@less-loader/index.js!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=style&index=0!./Tab.vue");
+		module.hot.accept("!!./../../node_modules/.0.21.0@css-loader/index.js!./../../node_modules/.7.1.7@vue-loader/lib/style-rewriter.js?id=_v-1e3df8e3&file=Tab.vue!./../../node_modules/.2.2.3@less-loader/index.js!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=style&index=0!./Tab.vue", function() {
+			var newContent = require("!!./../../node_modules/.0.21.0@css-loader/index.js!./../../node_modules/.7.1.7@vue-loader/lib/style-rewriter.js?id=_v-1e3df8e3&file=Tab.vue!./../../node_modules/.2.2.3@less-loader/index.js!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=style&index=0!./Tab.vue");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -470,14 +470,14 @@ if(false) {
 var content = __webpack_require__(9);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(2)(content, {});
+var update = __webpack_require__(3)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!./../../../node_modules/.0.21.0@css-loader/index.js!./../../../node_modules/.7.1.7@vue-loader/lib/style-rewriter.js?id=_v-c512445c&file=TabSet.vue!./../../../node_modules/.2.2.3@less-loader/index.js!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=style&index=0!./TabSet.vue", function() {
-			var newContent = require("!!./../../../node_modules/.0.21.0@css-loader/index.js!./../../../node_modules/.7.1.7@vue-loader/lib/style-rewriter.js?id=_v-c512445c&file=TabSet.vue!./../../../node_modules/.2.2.3@less-loader/index.js!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=style&index=0!./TabSet.vue");
+		module.hot.accept("!!./../../node_modules/.0.21.0@css-loader/index.js!./../../node_modules/.7.1.7@vue-loader/lib/style-rewriter.js?id=_v-5435d0a2&file=TabSet.vue!./../../node_modules/.2.2.3@less-loader/index.js!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=style&index=0!./TabSet.vue", function() {
+			var newContent = require("!!./../../node_modules/.0.21.0@css-loader/index.js!./../../node_modules/.7.1.7@vue-loader/lib/style-rewriter.js?id=_v-5435d0a2&file=TabSet.vue!./../../node_modules/.2.2.3@less-loader/index.js!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=style&index=0!./TabSet.vue");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -490,7 +490,7 @@ if(false) {
 /* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)();
+exports = module.exports = __webpack_require__(4)();
 // imports
 
 
@@ -504,12 +504,12 @@ exports.push([module.i, ".tab-content > .tab-pane {\n  display: block;\n}\n", ""
 /* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)();
+exports = module.exports = __webpack_require__(4)();
 // imports
 
 
 // module
-exports.push([module.i, ".nav-tabs {\n  margin-bottom: 15px;\n}\n.nav-tabs .remove-tab {\n  position: absolute;\n  top: -3px;\n  right: 5px;\n  font-size: 16px;\n  opacity: .5;\n  cursor: pointer;\n}\n", ""]);
+exports.push([module.i, ".nav-tabs {\n  margin-bottom: 15px;\n}\n.nav-tabs .remove-tab {\n  position: absolute;\n  top: -3px;\n  right: 5px;\n  font-size: 16px;\n  opacity: .5;\n  cursor: pointer;\n}\n.tabset-list-item:hover,\n.tabset-list-item:focus {\n  background-color: #fff;\n  outline: none;\n}\n.tabset-list-item a:focus,\n.tabset-list-item a:hover {\n  background-color: #fff;\n  border-color: #fff;\n  outline: none;\n}\n", ""]);
 
 // exports
 
@@ -518,17 +518,17 @@ exports.push([module.i, ".nav-tabs {\n  margin-bottom: 15px;\n}\n.nav-tabs .remo
 /* 10 */
 /***/ function(module, exports) {
 
-module.exports = "<div role=\"tabpanel\" class=\"tab-pane\"\n        :class=\"{hide: !show}\"\n        v-show=\"show\"\n        :transition=\"transition\"\n    >\n        <slot></slot>\n    </div>";
+module.exports = "<div role=\"tabpanel\" class=\"tab-pane\"\n        :class=\"{ 'hide': !show }\"\n        v-show=\"show\"\n        :transition=\"transition\"\n    >\n        <slot></slot>\n    </div>";
 
 /***/ },
 /* 11 */
 /***/ function(module, exports) {
 
-module.exports = "<div :data-name=\"name\">\n        <!-- Nav tabs -->\n        <ul v-el:header class=\"nav nav-tabs\" role=\"tablist\">\n            <li\n                v-for=\"r in renderData\"\n                :class=\"{\n                    'active': (r.index == active),\n                    'disabled': r.disabled\n                }\"\n                @click.prevent=\"handleTabListClick(r.index, r)\"\n                @mouseover.prevent=\"handleTabListMouseover(r.index, r)\"\n                :disabled=\"r.disabled\"\n            >\n                <a href=\"#\">  \n                    <slot name=\"header\"> \n                        {{{ r.header }}}\n                    </slot> \n                </a>\n                <span v-if=\"r.index == active && removeable\" @click=\"remove(r)\" class=\"remove-tab\">&times;</span>\n            </li>\n        </ul>\n        <!-- Tab panes -->\n        <div class=\"tab-content\" v-el:tab-content>\n            <slot></slot>\n        </div>\n    </div>";
+module.exports = "<div :data-name=\"name\">\n        <!-- Nav tabs -->\n        <ul v-el:header class=\"nav nav-tabs\" role=\"tablist\">\n            <li\n                v-for=\"r in renderData\"\n                :class=\"{\n                    'tabset-list-item': true,\n                    'active': (r.index == active),\n                    'disabled': r.disabled\n                }\"\n                @click.prevent=\"handleTabListClick(r.index, r)\"\n                @mouseover.prevent=\"handleTabListMouseover(r.index, r)\"\n                :disabled=\"r.disabled\"\n            >\n                <a href=\"#\">  \n                    <slot name=\"header\"> \n                        {{{ r.header }}}\n                    </slot> \n                </a>\n                <span v-if=\"r.index == active && removeable\" @click=\"remove(r)\" class=\"remove-tab\">&times;</span>\n            </li>\n        </ul>\n        <!-- Tab panes -->\n        <div class=\"tab-content\" v-el:tab-content>\n            <slot></slot>\n        </div>\n    </div>";
 
 /***/ },
 /* 12 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
@@ -536,9 +536,16 @@ module.exports = "<div :data-name=\"name\">\n        <!-- Nav tabs -->\n        
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-// <template>
+
+var _TabSet = __webpack_require__(2);
+
+var _TabSet2 = _interopRequireDefault(_TabSet);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var COMPONENT_NS = 'TAB'; // <template>
 //     <div role="tabpanel" class="tab-pane"
-//         :class="{hide: !show}"
+//         :class="{ 'hide': !show }"
 //         v-show="show"
 //         :transition="transition"
 //     >
@@ -553,9 +560,10 @@ Object.defineProperty(exports, "__esModule", {
 // </style>
 
 // <script>
-var COMPONENT_NS = 'TAB';
 
-exports.default = {
+
+var vcTab = {
+    name: 'vc-tab',
     props: {
         header: { // tab标题
             type: String
@@ -644,6 +652,10 @@ exports.default = {
         }
     }
 };
+
+vcTab.vcTabset = _TabSet2.default;
+
+exports.default = vcTab;
 // </script>
 
 /***/ },
@@ -663,6 +675,7 @@ Object.defineProperty(exports, "__esModule", {
 //             <li
 //                 v-for="r in renderData"
 //                 :class="{
+//                     'tabset-list-item': true,
 //                     'active': (r.index == active),
 //                     'disabled': r.disabled
 //                 }"
@@ -697,10 +710,22 @@ Object.defineProperty(exports, "__esModule", {
 //     opacity: .5;
 //     cursor: pointer;
 // }
+// .tabset-list-item:hover,
+// .tabset-list-item:focus {
+//     background-color: #fff;
+//     outline: none;
+// }
+// .tabset-list-item a:focus,
+// .tabset-list-item a:hover {
+//     background-color: #fff;
+//     border-color: #fff;
+//     outline: none;
+// }
 // </style>
 
 // <script>
 exports.default = {
+    name: 'vc-tabSet',
     props: {
         name: String,
         removeable: {
@@ -766,20 +791,19 @@ exports.default = {
 "use strict";
 'use strict';
 
-var _TabSet = __webpack_require__(5);
-
-var _TabSet2 = _interopRequireDefault(_TabSet);
-
-var _Tab = __webpack_require__(4);
+var _Tab = __webpack_require__(5);
 
 var _Tab2 = _interopRequireDefault(_Tab);
 
+var _TabSet = __webpack_require__(2);
+
+var _TabSet2 = _interopRequireDefault(_TabSet);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-module.exports = {
-    vcTab: _Tab2.default,
-    vcTabset: _TabSet2.default
-};
+_Tab2.default.vcTabset = _TabSet2.default;
+
+module.exports = _Tab2.default;
 
 /***/ }
 /******/ ])

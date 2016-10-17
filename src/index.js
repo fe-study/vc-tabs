@@ -1,7 +1,7 @@
-import vcTabset from './components/TabSet'
-import vcTab from './components/Tab'
+import vcTab from './Tab'
 
-module.exports = {
-    vcTab,
-    vcTabset
+export default vcTab
+
+export {
+    vcTab
 }

@@ -5,6 +5,7 @@
             <li
                 v-for="r in renderData"
                 :class="{
+                    'tabset-list-item': true,
                     'active': (r.index == active),
                     'disabled': r.disabled
                 }"
@@ -39,10 +40,22 @@
     opacity: .5;
     cursor: pointer;
 }
+.tabset-list-item:hover,
+.tabset-list-item:focus {
+    background-color: #fff;
+    outline: none;
+}
+.tabset-list-item a:focus,
+.tabset-list-item a:hover {
+    background-color: #fff;
+    border-color: #fff;
+    outline: none;
+}
 </style>
 
 <script>
 export default {
+    name: 'vc-tabSet',
     props: {
         name: String,
         removeable: {

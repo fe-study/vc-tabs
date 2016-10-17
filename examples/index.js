@@ -1,5 +1,6 @@
 import Vue from 'vue'
-import { vcTabset, vcTab } from '../dist/build.js'
+import vcTab from '../src'
+const vcTabset = vcTab.vcTabset
 
 new Vue({
 	el: '#app',
@@ -23,7 +24,7 @@ new Vue({
         }
     },
 	components: {
-        vcTabset,
-        vcTab
+        vcTab,
+        vcTabset
 	}
 })
