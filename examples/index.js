@@ -1,6 +1,6 @@
 import Vue from 'vue'
-import vcTab from '../src'
-const vcTabset = vcTab.vcTabset
+import vcTabs from '../src/Tabs.vue'
+const vcTab = vcTabs.vcTab
 
 new Vue({
 	el: '#app',
@@ -24,7 +24,7 @@ new Vue({
         }
     },
 	components: {
-        vcTab,
-        vcTabset
+        vcTabs,
+        vcTab
 	}
 })

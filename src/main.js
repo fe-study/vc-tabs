@@ -1,6 +1,3 @@
-import vcTab from './Tab'
-import vcTabset from './TabSet'
+import vcTabs from './Tabs'
 
-vcTab.vcTabset = vcTabset
-
-module.exports = vcTab
+module.exports = vcTabs

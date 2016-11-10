@@ -1,5 +1,11 @@
 <h1 align="center">vc-tabs - @changelog</h1>
 
+## 0.5.0
+
+`2016-10-17`
+
+- 子组件挂载化: `vcTabs.vcTab`
+
 ## 0.4.0
 
 `2016-08-23`

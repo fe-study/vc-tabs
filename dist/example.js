@@ -10475,16 +10475,19 @@ module.exports = Vue;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.vcTab = undefined;
+exports.vcTab = exports.vcTabs = undefined;
 
-var _Tab = __webpack_require__(16);
+var _Tabs = __webpack_require__(17);
 
-var _Tab2 = _interopRequireDefault(_Tab);
+var _Tabs2 = _interopRequireDefault(_Tabs);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = _Tab2.default;
-exports.vcTab = _Tab2.default;
+var vcTab = _Tabs2.default.vcTab;
+
+exports.default = _Tabs2.default;
+exports.vcTabs = _Tabs2.default;
+exports.vcTab = vcTab;
 
 /***/ },
 /* 6 */
@@ -10694,8 +10697,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!./../../node_modules/.0.21.0@css-loader/index.js!./../../node_modules/.7.1.7@vue-loader/lib/style-rewriter.js?id=_v-5435d0a2&file=TabSet.vue!./../../node_modules/.2.2.3@less-loader/index.js!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=style&index=0!./TabSet.vue", function() {
-			var newContent = require("!!./../../node_modules/.0.21.0@css-loader/index.js!./../../node_modules/.7.1.7@vue-loader/lib/style-rewriter.js?id=_v-5435d0a2&file=TabSet.vue!./../../node_modules/.2.2.3@less-loader/index.js!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=style&index=0!./TabSet.vue");
+		module.hot.accept("!!./../../node_modules/.0.21.0@css-loader/index.js!./../../node_modules/.7.1.7@vue-loader/lib/style-rewriter.js?id=_v-a5a676c0&file=Tabs.vue!./../../node_modules/.2.2.3@less-loader/index.js!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=style&index=0!./Tabs.vue", function() {
+			var newContent = require("!!./../../node_modules/.0.21.0@css-loader/index.js!./../../node_modules/.7.1.7@vue-loader/lib/style-rewriter.js?id=_v-a5a676c0&file=Tabs.vue!./../../node_modules/.2.2.3@less-loader/index.js!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=style&index=0!./Tabs.vue");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -10771,7 +10774,7 @@ module.exports = g;
 
 /***/ },
 /* 14 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
 "use strict";
 'use strict';
@@ -10779,14 +10782,7 @@ module.exports = g;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-
-var _TabSet = __webpack_require__(17);
-
-var _TabSet2 = _interopRequireDefault(_TabSet);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var COMPONENT_NS = 'TAB'; // <template>
+// <template>
 //     <div role="tabpanel" class="tab-pane"
 //         :class="{ 'hide': !show }"
 //         v-show="show"
@@ -10804,8 +10800,9 @@ var COMPONENT_NS = 'TAB'; // <template>
 
 // <script>
 
+var COMPONENT_NS = 'TAB';
 
-var vcTab = {
+exports.default = {
     name: 'vc-tab',
     props: {
         header: { // tab标题
@@ -10895,15 +10892,11 @@ var vcTab = {
         }
     }
 };
-
-vcTab.vcTabset = _TabSet2.default;
-
-exports.default = vcTab;
 // </script>
 
 /***/ },
 /* 15 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
@@ -10911,64 +10904,15 @@ exports.default = vcTab;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-// <template>
-//     <div :data-name="name">
-//         <!-- Nav tabs -->
-//         <ul v-el:header class="nav nav-tabs" role="tablist">
-//             <li
-//                 v-for="r in renderData"
-//                 :class="{
-//                     'tabset-list-item': true,
-//                     'active': (r.index == active),
-//                     'disabled': r.disabled
-//                 }"
-//                 @click.prevent="handleTabListClick(r.index, r)"
-//                 @mouseover.prevent="handleTabListMouseover(r.index, r)"
-//                 :disabled="r.disabled"
-//             >
-//                 <a href="#">  
-//                     <slot name="header"> 
-//                         {{{ r.header }}}
-//                     </slot> 
-//                 </a>
-//                 <span v-if="r.index == active && removeable" @click="remove(r)" class="remove-tab">&times;</span>
-//             </li>
-//         </ul>
-//         <!-- Tab panes -->
-//         <div class="tab-content" v-el:tab-content>
-//             <slot></slot>
-//         </div>
-//     </div>
-// </template>
 
-// <style>
-// .nav-tabs {
-//     margin-bottom: 15px;
-// }
-// .nav-tabs .remove-tab {
-//     position: absolute;
-//     top: -3px;
-//     right: 5px;
-//     font-size: 16px;
-//     opacity: .5;
-//     cursor: pointer;
-// }
-// .tabset-list-item:hover,
-// .tabset-list-item:focus {
-//     background-color: #fff;
-//     outline: none;
-// }
-// .tabset-list-item a:focus,
-// .tabset-list-item a:hover {
-//     background-color: #fff;
-//     border-color: #fff;
-//     outline: none;
-// }
-// </style>
+var _Tab = __webpack_require__(16);
 
-// <script>
-exports.default = {
-    name: 'vc-tabSet',
+var _Tab2 = _interopRequireDefault(_Tab);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Tabs = {
+    name: 'vc-tabs',
     props: {
         name: String,
         removeable: {
@@ -11024,7 +10968,65 @@ exports.default = {
             }
         }
     }
-};
+}; // <template>
+//     <div :data-name="name">
+//         <!-- Nav tabs -->
+//         <ul v-el:header class="nav nav-tabs" role="tablist">
+//             <li
+//                 v-for="r in renderData"
+//                 :class="{
+//                     'tabset-list-item': true,
+//                     'active': (r.index == active),
+//                     'disabled': r.disabled
+//                 }"
+//                 @click.prevent="handleTabListClick(r.index, r)"
+//                 @mouseover.prevent="handleTabListMouseover(r.index, r)"
+//                 :disabled="r.disabled"
+//             >
+//                 <a href="#">  
+//                     <slot name="header"> 
+//                         {{{ r.header }}}
+//                     </slot> 
+//                 </a>
+//                 <span v-if="r.index == active && removeable" @click="remove(r)" class="remove-tab">&times;</span>
+//             </li>
+//         </ul>
+//         <!-- Tab panes -->
+//         <div class="tab-content" v-el:tab-content>
+//             <slot></slot>
+//         </div>
+//     </div>
+// </template>
+
+// <style>
+// .nav-tabs {
+//     margin-bottom: 15px;
+// }
+// .nav-tabs .remove-tab {
+//     position: absolute;
+//     top: -3px;
+//     right: 5px;
+//     font-size: 16px;
+//     opacity: .5;
+//     cursor: pointer;
+// }
+// .tabset-list-item:hover,
+// .tabset-list-item:focus {
+//     background-color: #fff;
+//     outline: none;
+// }
+// .tabset-list-item a:focus,
+// .tabset-list-item a:hover {
+//     background-color: #fff;
+//     border-color: #fff;
+//     outline: none;
+// }
+// </style>
+
+// <script>
+
+Tabs.vcTab = _Tab2.default;
+exports.default = Tabs;
 // </script>
 
 /***/ },
@@ -11066,12 +11068,12 @@ if (false) {
 var hotAPI = require("vue-hot-reload-api")
 hotAPI.install(require("vue"))
 if (!hotAPI.compatible) return
-var id = "-!babel!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=script&index=0!./TabSet.vue"
+var id = "-!babel!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=script&index=0!./Tabs.vue"
 hotAPI.createRecord(id, module.exports)
-module.hot.accept(["-!babel!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=script&index=0!./TabSet.vue","-!vue-html-loader!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=template&index=0!./TabSet.vue"], function () {
-var newOptions = require("-!babel!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=script&index=0!./TabSet.vue")
+module.hot.accept(["-!babel!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=script&index=0!./Tabs.vue","-!vue-html-loader!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=template&index=0!./Tabs.vue"], function () {
+var newOptions = require("-!babel!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=script&index=0!./Tabs.vue")
 if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-var newTemplate = require("-!vue-html-loader!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=template&index=0!./TabSet.vue")
+var newTemplate = require("-!vue-html-loader!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=template&index=0!./Tabs.vue")
 hotAPI.update(id, newOptions, newTemplate)
 })
 })()
@@ -11094,7 +11096,7 @@ var _src2 = _interopRequireDefault(_src);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var vcTabset = _src2.default.vcTabset;
+var vcTab = _src2.default.vcTab;
 
 new _vue2.default({
     el: '#app',
@@ -11119,8 +11121,8 @@ new _vue2.default({
         }
     },
     components: {
-        vcTab: _src2.default,
-        vcTabset: vcTabset
+        vcTabs: _src2.default,
+        vcTab: vcTab
     }
 });
 

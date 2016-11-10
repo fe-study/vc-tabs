@@ -15,11 +15,10 @@
 </style>
 
 <script>
-import vcTabset from './TabSet.vue'
 
 const COMPONENT_NS = 'TAB'
 
-const vcTab = {
+export default {
     name: 'vc-tab',
     props: {
         header: { // tab标题
@@ -108,8 +107,4 @@ const vcTab = {
         }
     }
 }
-
-vcTab.vcTabset = vcTabset
-
-export default vcTab
 </script>

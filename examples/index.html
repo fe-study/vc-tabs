@@ -22,7 +22,7 @@
 
     <div id="app" class="container">
 
-        <vc-tabset 
+        <vc-tabs
             v-ref:tabs
             :trigger="trigger"
             :active="active"
@@ -49,7 +49,7 @@
             >
                 <div>content0</div>
             </vc-tab>
-        </vc-tabset>
+        </vc-tabs>
 
         <pre>{{ renderData | json 4 }}</pre>
         <span @click="deleteTheTab">点我删除一个tab</span>

@@ -1,7 +1,10 @@
-import vcTab from './Tab'
+import vcTabs from './Tabs'
 
-export default vcTab
+const vcTab = vcTabs.vcTab
+
+export default vcTabs
 
 export {
+    vcTabs,
     vcTab
 }

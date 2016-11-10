@@ -54,8 +54,10 @@
 </style>
 
 <script>
-export default {
-    name: 'vc-tabSet',
+import vcTab from './Tab.vue'
+
+const Tabs = {
+    name: 'vc-tabs',
     props: {
         name: String,
         removeable: {
@@ -83,7 +85,7 @@ export default {
             default: true 
         }
     },
-    data: function () {
+    data () {
         return {
             renderData: [],
             index: 0,
@@ -93,12 +95,12 @@ export default {
         remove (tabItem) {
             this.renderData.$remove(tabItem)
         },
-        handleTabListClick: function (index, el) {
+        handleTabListClick (index, el) {
             if (this.trigger === 'click') {
                 if (!el.disabled) this.active = index
             }
         },
-        handleTabListMouseover: function (index, el) {
+        handleTabListMouseover (index, el) {
             if (this.trigger === 'hover') {
                 var oldTriggerId = this.triggerId
                 clearTimeout(oldTriggerId)
@@ -109,4 +111,6 @@ export default {
         }
     }
 }
+Tabs.vcTab = vcTab
+export default Tabs
 </script>
